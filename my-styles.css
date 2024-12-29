@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 40px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  width: 90%;
+  max-width: 1200px;
+  height: 100vh;
+}
+.carousel {
+  width: 90%;
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+#carousel-track {
+  display: flex;
+  align-items: center;
+  margin: 40px;
+  transition: transform 0.5s ease-out;
+  justify-content: flex-start;
+}
+
+.carousel-card {
+  flex: 0 0 calc(100% / 5);
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #eae9e9;
+  border-radius: 5px;
+  margin: 0 10px;
+  box-shadow: 0 4px 6px black;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.carousel-card .card-text {
+  background-color: white;
+  border: 1px solid rgb(245, 245, 245);
+  padding: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 90%;
+  text-align: justify;
+  left: 5%;
+}
+
+.carousel-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card-text h3 {
+  padding-bottom: 10px;
+}
+
+.card-text p {
+  font-size: x-small;
+}
+
+.carousel-card.center {
+  transform: scale(1.2);
+  z-index: 3;
+  opacity: 1;
+}
+
+.carousel-card.side {
+  transform: scaleY(1);
+  z-index: 2;
+  opacity: 0.8;
+}
+
+.carousel-card.far-side {
+  transform: scaleY(0.8);
+  z-index: 1;
+  opacity: 0.5;
+}
+
+#carousel-buttons {
+  position: absolute;
+  top: 40%;
+  left: 0%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel-button {
+  color: black;
+  border: 1px solid black;
+  padding: 10px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.pagination-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: rgb(204, 191, 191);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-dot.active {
+  background-color: black;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+  .carousel-card {
+    flex: 0 0 calc(100% / 3);
+  }
+}
+@media (max-width: 768px) {
+  .carousel-card {
+    flex: 0 0 calc(100% / 2);
+  }
+
+  .carousel-container {
+    height: auto;
+  }
+
+  .carousel-card {
+    margin: 0 0;
+  }
+
+  .carousel-card .card-text {
+    position: relative;
+  }
+
+  .pagination {
+    bottom: 0%;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-card {
+    flex: 0 0 100%;
+    margin: 0;
+  }
+
+  .carousel-card.center {
+    transform: scaleY(1.2);
+  }
+}
