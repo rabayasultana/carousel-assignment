@@ -96,7 +96,7 @@ fetch("/book-description.json")
     //Auto-rotation
     setInterval(() => {
       rightButton.click();
-    }, 4000);
+    }, 5000);
 
     updateCarousel();
     updateClasses();
